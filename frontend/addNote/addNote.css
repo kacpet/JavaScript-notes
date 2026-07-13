@@ -1,0 +1,308 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Inter",sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            rgba(90,60,180,.18),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(0,140,255,.12),
+            transparent 40%
+        ),
+
+    #03050b;
+
+    color:white;
+
+}
+
+.editor{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+.editor-navbar{
+
+    height:78px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    padding:0 30px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.25);
+
+}
+
+
+/* ========================= */
+/* TYTUŁ */
+/* ========================= */
+
+.title-input{
+
+    width:320px;
+
+    padding:12px 18px;
+
+    font-size:26px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    border-radius:16px;
+
+    outline:none;
+
+    transition:.25s;
+
+}
+
+.title-input::placeholder{
+
+    color:rgba(255,255,255,.45);
+
+}
+
+.title-input:focus{
+
+    border-color:#7c5cff;
+
+    box-shadow:
+        0 0 25px rgba(124,92,255,.25);
+
+}
+
+
+/* ========================= */
+/* TOOLBAR */
+/* ========================= */
+
+.toolbar{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+/* PRZYCISKI */
+
+.toolbar button{
+
+    width:46px;
+    height:46px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.toolbar button:hover{
+
+    background:linear-gradient(
+        135deg,
+        #7c5cff,
+        #5b8cff
+    );
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(92,115,255,.35);
+
+}
+
+.toolbar button:active{
+
+    transform:scale(.95);
+
+}
+
+
+/* ========================= */
+/* PRZYCISK ZAPISU */
+/* ========================= */
+
+#save-note{
+
+    padding:14px 32px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        #7c5cff,
+        #5b8cff
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#save-note:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(92,115,255,.45);
+
+}
+
+#save-note:active{
+
+    transform:scale(.97);
+
+}
+
+
+/* ========================= */
+/* EDYTOR */
+/* ========================= */
+
+.editor-content{
+
+    flex:1;
+
+    padding:60px;
+
+    outline:none;
+
+    overflow-y:auto;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+.editor-content:empty::before{
+
+    content:"Rozpocznij pisanie...";
+
+    color:rgba(255,255,255,.35);
+
+}
+
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:900px){
+
+    .editor-navbar{
+
+        height:auto;
+
+        padding:15px;
+
+        flex-wrap:wrap;
+
+        gap:15px;
+
+    }
+
+    .title-input{
+
+        width:100%;
+
+        order:1;
+
+    }
+
+    .toolbar{
+
+        width:100%;
+
+        justify-content:flex-start;
+
+        flex-wrap:wrap;
+
+        order:2;
+
+    }
+
+    #save-note{
+
+        width:100%;
+
+        order:3;
+
+    }
+
+    .editor-content{
+
+        padding:30px 20px;
+
+        font-size:17px;
+
+    }
+
+}
