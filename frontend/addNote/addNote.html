@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="addNote.css">
+</head>
+<body>
+    <div class="editor">
+
+        <nav class="editor-navbar">
+
+            <input
+                id="title"
+                class="title-input"
+                type="text"
+                placeholder="Tytuł notatki">
+
+            <div class="toolbar">
+
+                <button data-command="bold"><b>B</b></button>
+
+                <button data-command="italic"><i>I</i></button>
+
+                <button data-command="underline"><u>U</u></button>
+
+                <button data-command="formatBlock" data-value="h1">
+                    H1
+                </button>
+
+                <button data-command="formatBlock" data-value="h2">
+                    H2
+                </button>
+
+                <button data-command="insertUnorderedList">
+                    • Lista
+                </button>
+
+                <button data-command="insertOrderedList">
+                    1.
+                </button>
+
+            </div>
+
+            <button id="save-note">
+                Zapisz
+            </button>
+
+        </nav>
+
+        <div
+            id="content"
+            class="editor-content"
+            contenteditable="true">
+
+        </div>
+
+    </div>
+    <script src="addNote.js"></script>
+</body>
+</html>
