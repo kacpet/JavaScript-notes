@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dodaj wydarzenie</title>
+    <link rel="stylesheet" href="addEvent.css" />
+    <link rel="stylesheet" href="../navbar/navbar.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <nav class="navbar">
+        <div class="nav-left">
+          <button data-page="home">Główna</button>
+          <button data-page="notes">Notatki</button>
+          <button class="active" data-page="calendar">Kalendarz</button>
+          <button data-page="day">Dziś</button>
+          <!-- <button data-page="expenses">Wydatki</button> -->
+        </div>
+        <div class="nav-right profile-menu">
+          <button id="profile-button">Profil</button>
+          <div class="profile-dropdown">
+            <button data-page="settings">Ustawienia</button>
+            <button id="logout">Wyloguj</button>
+          </div>
+        </div>
+      </nav>
+      <script src="../navbar/navbar.js"></script>
+      <main class="event-page">
+        <h1>Dodaj wydarzenie</h1>
+        <form class="event-form" id="eventForm">
+          <!-- Podstawowe informacje -->
+          <section class="form-section">
+            <div class="field">
+              <label for="eventName"> Nazwa wydarzenia </label>
+              <input
+                id="eventName"
+                name="eventName"
+                type="text"
+                placeholder="Np. Trening badminton"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="eventDescription"> Opis </label>
+              <textarea
+                id="eventDescription"
+                name="description"
+                rows="4"
+                placeholder="Opcjonalny opis wydarzenia"
+              >
+              </textarea>
+            </div>
+            <div class="row">
+              <div class="field">
+                <label for="eventDate"> Data wydarzenia </label>
+                <input id="eventDate" name="eventDate" type="date" required />
+              </div>
+              <div class="field">
+                <label for="location"> Miejsce </label>
+                <input
+                  id="location"
+                  name="location"
+                  type="text"
+                  placeholder="Opcjonalnie"
+                />
+              </div>
+            </div>
+          </section>
+          <hr />
+          <!-- Czas -->
+          <section class="form-section">
+            <div class="checkbox">
+              <input id="allDay" name="allDay" type="checkbox" />
+              <label for="allDay"> Całodniowe wydarzenie </label>
+            </div>
+            <div class="row" id="timeFields">
+              <div class="field">
+                <label for="startTime"> Godzina rozpoczęcia </label>
+                <input id="startTime" name="startTime" type="time" />
+              </div>
+              <div class="field">
+                <label for="endTime"> Godzina zakończenia </label>
+                <input id="endTime" name="endTime" type="time" />
+              </div>
+            </div>
+          </section>
+          <hr />
+          <!-- Powtarzanie -->
+          <section class="form-section">
+            <div class="checkbox">
+              <input id="repeat" name="repeat" type="checkbox" />
+              <label for="repeat"> Wydarzenie cykliczne </label>
+            </div>
+            <div id="repeatSettings">
+              <div class="field">
+                <label for="repeatType"> Powtarzanie </label>
+                <select id="repeatType" name="repeatType">
+                  <option value="daily">Codziennie</option>
+                  <option value="weekly">Co tydzień</option>
+                  <option value="monthly">Co miesiąc</option>
+                  <option value="yearly">Co rok</option>
+                  <option value="days">Wybrane dni tygodnia</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="repeatEvery"> Powtarzaj co </label>
+                <select id="repeatEvery" name="repeatEvery">
+                  <option value="1">1 okres</option>
+                  <option value="2">2 okresy</option>
+                  <option value="3">3 okresy</option>
+                  <option value="4">4 okresy</option>
+                  <option value="5">5 okresów</option>
+                </select>
+              </div>
+              <div class="weekdays" id="weekdays">
+                <label>
+                  Pon
+                  <input type="checkbox" name="weekdays" value="1" />
+                </label>
+                <label>
+                  Wt
+                  <input type="checkbox" name="weekdays" value="2" />
+                </label>
+                <label>
+                  Śr
+                  <input type="checkbox" name="weekdays" value="3" />
+                </label>
+                <label>
+                  Czw
+                  <input type="checkbox" name="weekdays" value="4" />
+                </label>
+                <label>
+                  Pt
+                  <input type="checkbox" name="weekdays" value="5" />
+                </label>
+                <label>
+                  Sob
+                  <input type="checkbox" name="weekdays" value="6" />
+                </label>
+                <label>
+                  Nd
+                  <input type="checkbox" name="weekdays" value="0" />
+                </label>
+              </div>
+              <div class="field">
+                <label for="repeatUntil"> Powtarzaj do </label>
+                <input id="repeatUntil" name="repeatUntil" type="date" />
+              </div>
+            </div>
+          </section>
+          <hr />
+          <!-- Wygląd wydarzenia -->
+          <section class="form-section">
+            <div class="field">
+              <label for="eventColor"> Kolor wydarzenia </label>
+              <input
+                id="eventColor"
+                name="eventColor"
+                type="color"
+                value="#7c5cff"
+              />
+            </div>
+          </section>
+          <button class="save-button" type="submit">Zapisz wydarzenie</button>
+        </form>
+      </main>
+    </div>
+    <script src="../navbar/navbar.js"></script>
+    <script type="module" src="addEvent.js"></script>
+  </body>
+</html>

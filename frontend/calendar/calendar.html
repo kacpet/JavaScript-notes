@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalendarz</title>
+    <link rel="stylesheet" href="calendar.css" />
+    <link rel="stylesheet" href="../navbar/navbar.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <nav class="navbar">
+        <div class="nav-left">
+          <buttondata-page="home">Główna</buttondata-page=>
+          <button data-page="notes">Notatki</button>
+          <button  class="active"  data-page="calendar">Kalendarz</button>
+          <button data-page="day">Dziś</button>
+          <!-- <button data-page="expenses">Wydatki</button> -->
+        </div>
+        <div class="nav-right profile-menu">
+          <button id="profile-button">Profil</button>
+          <div class="profile-dropdown">
+            <button data-page="settings">Ustawienia</button>
+            <button id="logout">Wyloguj</button>
+          </div>
+        </div>
+      </nav>
+      <script src="../navbar/navbar.js"></script>
+      <main>
+        <section class="calendar-page">
+          <h1>Kalendarz</h1>
+          <button class="main-button" id="addEvent">+ Dodaj wydarzenie</button>
+          <div class="calendar-card">
+            <div class="calendar-header">
+              <button id="prevMonth">◀</button>
+              <h2 id="monthTitle"></h2>
+              <button id="nextMonth">▶</button>
+            </div>
+            <div class="calendar-grid" id="calendarGrid"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="calendar.js"></script>
+  </body>
+</html>

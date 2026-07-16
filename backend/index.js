@@ -1,9 +1,9 @@
-const db = require("./database");
+const db = require('./database');
 
-db.query("SELECT NOW()")
-.then(result=>{
+db.query('SELECT NOW()')
+  .then((result) => {
     console.log(result.rows);
-})
-.catch(error=>{
+  })
+  .catch((error) => {
     console.log(error);
-});
+  });

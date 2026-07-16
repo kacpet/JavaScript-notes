@@ -1,0 +1,198 @@
+* {
+box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+body {
+min-height: 100vh;
+  color: white;
+  background:
+    radial-gradient(circle at 15% 10%, rgb(124 92 255 / 80%), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgb(0 198 255 / 75%), transparent 45%),
+    radial-gradient(circle at 50% 50%, rgb(91 140 255 / 35%), transparent 60%),
+    #080f24;
+}
+
+.calendar-page {
+display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 90px 25px 40px;
+}
+
+.calendar-page h1 {
+margin-bottom: 35px;
+  font-size: 38px;
+}
+/* =========================
+   BUTTON
+========================= */
+.main-button {
+padding: 15px 45px;
+  margin-bottom: 35px;
+  border: none;
+  border-radius: 18px;
+  color: white;
+  background: linear-gradient(135deg, #7c5cff, #5b8cff);
+  cursor: pointer;
+  transition: 0.25s;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.main-button:hover {
+box-shadow: 0 10px 30px rgb(92 115 255 / 45%);
+  transform: translateY(-3px);
+}
+/* =========================
+   CALENDAR BOX
+========================= */
+.calendar-card {
+width: min(700px, 90vw);
+  padding: 20px;
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 24px;
+  background: rgb(255 255 255 / 8%);
+  box-shadow:
+    0 20px 50px rgb(0 0 0 / 35%),
+    inset 0 1px 0 rgb(255 255 255 / 8%);
+  animation: show 0.5s ease;
+  backdrop-filter: blur(20px);
+}
+/* =========================
+   HEADER
+========================= */
+.calendar-header {
+display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.calendar-header h2 {
+font-size: 26px;
+  font-weight: 600;
+}
+
+.calendar-header button {
+width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  background: rgb(255 255 255 / 12%);
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 17px;
+}
+
+.calendar-header button:hover {
+background: rgb(124 92 255 / 60%);
+  transform: scale(1.1);
+}
+
+.calendar-grid {
+display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.day-name {
+padding: 10px;
+  color: rgb(255 255 255 / 75%);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.day {
+min-height: 70px;
+  padding: 10px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 16px;
+  background: rgb(255 255 255 / 8%);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.day:hover {
+background: rgb(255 255 255 / 15%);
+  transform: translateY(-4px);
+}
+
+.day-number {
+font-size: 16px;
+  font-weight: 500;
+}
+
+.today {
+background: linear-gradient(135deg, #7c5cff, #5b8cff);
+  box-shadow: 0 0 20px rgb(124 92 255 / 70%);
+}
+
+.empty {
+background: transparent;
+  cursor: default;
+}
+
+@keyframes show {
+from {
+opacity: 0;
+    transform: translateY(20px);
+}
+  to {
+opacity: 1;
+    transform: translateY(0);
+}
+}
+
+@media (max-width: 700px) {
+.calendar-page {
+padding: 70px 15px 30px;
+}
+  .calendar-page h1 {
+font-size: 30px;
+}
+  .calendar-card {
+padding: 15px;
+}
+  .calendar-grid {
+gap: 5px;
+}
+  .day {
+min-height: 50px;
+    padding: 7px;
+    border-radius: 12px;
+}
+  .day-number {
+font-size: 13px;
+}
+  .day-name {
+padding: 8px;
+    font-size: 12px;
+}
+}
+
+.calendar-event {
+overflow: hidden;
+  width: 100%;
+  line-height: 1.2;
+  padding: 3px 6px;
+  margin-top: 3px;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.calendar-event:hover {
+opacity: 0.9;
+  transform: translateY(-1px);
+}

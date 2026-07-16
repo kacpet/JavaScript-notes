@@ -1,64 +1,31 @@
-const jwt = require("jsonwebtoken");
+const jwt = require('jsonwebtoken');
 
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers.authorization;
 
-function authenticateToken(req,res,next){
+  if (!authHeader) {
+    return res.status(401).json({
+      success: false,
 
+      message: 'Brak tokena',
+    });
+  }
 
-    const authHeader =
-        req.headers.authorization;
+  const token = authHeader.split(' ')[1];
 
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    if(!authHeader){
+    req.user = decoded;
 
-        return res.status(401).json({
+    next();
+  } catch (error) {
+    return res.status(401).json({
+      success: false,
 
-            success:false,
-
-            message:"Brak tokena"
-
-        });
-
-    }
-
-
-
-    const token =
-        authHeader.split(" ")[1];
-
-
-
-    try{
-
-
-        const decoded =
-            jwt.verify(
-                token,
-                process.env.JWT_SECRET
-            );
-
-
-        req.user = decoded;
-
-
-        next();
-
-
-    }catch(error){
-
-
-        return res.status(401).json({
-
-            success:false,
-
-            message:"Niepoprawny token"
-
-        });
-
-
-    }
-
+      message: 'Niepoprawny token',
+    });
+  }
 }
-
-
 
 module.exports = authenticateToken;

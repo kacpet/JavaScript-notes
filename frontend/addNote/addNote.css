@@ -1,308 +1,275 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Inter",sans-serif;
+* {
+margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
 }
 
-body{
-
-    min-height:100vh;
-
-    background:
-        radial-gradient(
-            circle at 20% 15%,
-            rgba(90,60,180,.18),
-            transparent 35%
-        ),
-
-        radial-gradient(
-            circle at 80% 75%,
-            rgba(0,140,255,.12),
-            transparent 40%
-        ),
-
+body {
+min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 15%, rgb(90 60 180 / 18%), transparent 35%),
+    radial-gradient(circle at 80% 75%, rgb(0 140 255 / 12%), transparent 40%),
     #03050b;
-
-    color:white;
-
+  color: white;
 }
 
-.editor{
-
-    width:100%;
-    min-height:100vh;
-
-    display:flex;
-    flex-direction:column;
-
+.editor {
+width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-
-/* ========================= */
-/* NAVBAR */
-/* ========================= */
-
-.editor-navbar{
-
-    height:78px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:25px;
-
-    padding:0 30px;
-
-    background:rgba(255,255,255,.08);
-
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-
-    border-bottom:1px solid rgba(255,255,255,.12);
-
-    box-shadow:
-        0 10px 40px rgba(0,0,0,.25);
-
+.editor-navbar {
+height: auto;
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 30px;
+  background: rgb(255 255 255 / 8%);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgb(255 255 255 / 12%);
+  box-shadow: 0 10px 40px rgb(0 0 0 / 25%);
+  flex-wrap: wrap;
 }
 
-
-/* ========================= */
-/* TYTUŁ */
-/* ========================= */
-
-.title-input{
-
-    width:320px;
-
-    padding:12px 18px;
-
-    font-size:26px;
-
-    font-weight:600;
-
-    color:white;
-
-    background:rgba(255,255,255,.05);
-
-    border:1px solid rgba(255,255,255,.10);
-
-    border-radius:16px;
-
-    outline:none;
-
-    transition:.25s;
-
+.title-input {
+flex: 1;
+  width: 320px;
+  min-width: 220px;
+  max-width: 360px;
+  padding: 12px 18px;
+  font-size: 26px;
+  font-weight: 600;
+  color: white;
+  background: rgb(255 255 255 / 5%);
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 16px;
+  outline: none;
+  transition: 0.25s;
 }
 
-.title-input::placeholder{
-
-    color:rgba(255,255,255,.45);
-
+.title-input::placeholder {
+color: rgb(255 255 255 / 45%);
 }
 
-.title-input:focus{
-
-    border-color:#7c5cff;
-
-    box-shadow:
-        0 0 25px rgba(124,92,255,.25);
-
+.title-input:focus {
+border-color: #7c5cff;
+  box-shadow: 0 0 25px rgb(124 92 255 / 25%);
 }
 
-
-/* ========================= */
-/* TOOLBAR */
-/* ========================= */
-
-.toolbar{
-
-    flex:1;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:10px;
-
+.toolbar {
+flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-
-/* PRZYCISKI */
-
-.toolbar button{
-
-    width:46px;
-    height:46px;
-
-    border:none;
-
-    border-radius:14px;
-
-    background:rgba(255,255,255,.08);
-
-    color:white;
-
-    font-size:17px;
-
-    cursor:pointer;
-
-    transition:.2s;
-
+.toolbar button {
+width: clamp(34px, 3vw, 46px);
+  height: clamp(34px, 3vw, 46px);
+  flex: 0 1 auto;
+  border: none;
+  border-radius: clamp(9px, 1vw, 14px);
+  background: rgb(255 255 255 / 8%);
+  color: white;
+  font-size: clamp(13px, 1.2vw, 17px);
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.toolbar button:hover{
-
-    background:linear-gradient(
-        135deg,
-        #7c5cff,
-        #5b8cff
-    );
-
-    transform:translateY(-2px);
-
-    box-shadow:
-        0 8px 20px rgba(92,115,255,.35);
-
+.toolbar button:hover {
+background: linear-gradient(135deg, #7c5cff, #5b8cff);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgb(92 115 255 / 35%);
 }
 
-.toolbar button:active{
-
-    transform:scale(.95);
-
+.toolbar button:active {
+transform: scale(0.95);
 }
 
-
-/* ========================= */
-/* PRZYCISK ZAPISU */
-/* ========================= */
-
-#save-note{
-
-    padding:14px 32px;
-
-    border:none;
-
-    border-radius:18px;
-
-    background:linear-gradient(
-        135deg,
-        #7c5cff,
-        #5b8cff
-    );
-
-    color:white;
-
-    font-size:16px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.25s;
-
+.toolbar button.active {
+background: linear-gradient(135deg, #7c5cff, #5b8cff);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgb(92 115 255 / 45%);
 }
 
-#save-note:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 12px 30px rgba(92,115,255,.45);
-
+#save-note {
+flex-shrink: 0;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #7c5cff, #5b8cff);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
 }
 
-#save-note:active{
-
-    transform:scale(.97);
-
+#save-note:hover {
+transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgb(92 115 255 / 45%);
 }
 
-
-/* ========================= */
-/* EDYTOR */
-/* ========================= */
-
-.editor-content{
-
-    flex:1;
-
-    padding:60px;
-
-    outline:none;
-
-    overflow-y:auto;
-
-    font-size:18px;
-
-    line-height:1.8;
-
+#save-note:active {
+transform: scale(0.97);
 }
 
-.editor-content:empty::before{
-
-    content:"Rozpocznij pisanie...";
-
-    color:rgba(255,255,255,.35);
-
+.ql-editor a {
+cursor: text;
 }
 
+.ql-editor.ctrl-pressed a {
+cursor: pointer;
+}
 
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
+.editor-content {
+flex: 1;
+  padding: 60px;
+  outline: none;
+  overflow-y: auto;
+  font-size: 18px;
+  line-height: 1.8;
+}
 
-@media(max-width:900px){
+.editor-content:empty::before {
+content: 'Rozpocznij pisanie...';
+  color: rgb(255 255 255 / 35%);
+}
 
-    .editor-navbar{
+.ql-toolbar {
+display: none;
+}
 
-        height:auto;
+.ql-container {
+border: none !important;
+  font-family: inherit;
+  font-size: inherit;
+  height: 100%;
+}
 
-        padding:15px;
+.ql-editor {
+min-height: 500px;
+  padding: 20px;
+}
 
-        flex-wrap:wrap;
+.quill-checkbox {
+display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-right: 8px;
+}
 
-        gap:15px;
+.quill-checkbox input {
+appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background: transparent;
+  border: 2px solid #7c5cff;
+  cursor: pointer;
+  transition: 0.2s;
+}
 
-    }
+.quill-checkbox input:checked {
+background: linear-gradient(135deg, #7c5cff, #5b8cff);
+  border-color: #7c5cff;
+}
 
-    .title-input{
+.link-modal {
+position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0 0 0 / 55%);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
 
-        width:100%;
+.link-modal.active {
+display: flex;
+}
 
-        order:1;
+.link-box {
+width: 320px;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgb(255 255 255 / 8%);
+  border: 1px solid rgb(255 255 255 / 15%);
+  box-shadow: 0 20px 50px rgb(0 0 0 / 40%);
+}
 
-    }
+.link-box label {
+display: block;
+  margin-top: 12px;
+  margin-bottom: 5px;
+  color: white;
+}
 
-    .toolbar{
+.link-box input {
+width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: rgb(255 255 255 / 10%);
+  color: white;
+}
 
-        width:100%;
+.link-buttons {
+display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
 
-        justify-content:flex-start;
+.link-buttons button {
+flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #7c5cff, #5b8cff);
+  color: white;
+}
 
-        flex-wrap:wrap;
-
-        order:2;
-
-    }
-
-    #save-note{
-
-        width:100%;
-
-        order:3;
-
-    }
-
-    .editor-content{
-
-        padding:30px 20px;
-
-        font-size:17px;
-
-    }
-
+@media (width <= 700px) {
+.editor-navbar {
+min-height: 70px;
+    padding: 10px;
+    gap: 8px;
+    align-items: center;
+}
+  .title-input {
+width: 20%;
+    min-width: 100px;
+    font-size: 16px;
+    padding: 8px 10px;
+}
+  .toolbar {
+flex: 1;
+    justify-content: center;
+    gap: 5px;
+    max-width: 260px;
+}
+  .toolbar button {
+width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    font-size: 13px;
+}
+  #save-note {
+padding: 9px 14px;
+    font-size: 13px;
+}
+  .editor-content {
+padding: 20px;
+    font-size: 16px;
+}
 }

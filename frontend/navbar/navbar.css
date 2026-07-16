@@ -1,337 +1,158 @@
-/* ========================= */
-/* NAVBAR */
-/* ========================= */
-
-
-.navbar{
-
-    width:100%;
-
-    height:75px;
-
-    display:flex;
-
-    align-items:center;
-
-    padding:0 40px;
-
-    background:rgba(255,255,255,.08);
-
-    backdrop-filter:blur(20px);
-
-    position:relative;
-
-    z-index:1000;
-
+* {
+box-sizing: border-box;
 }
 
-
-
-/* Przyciski w navbarze */
-
-
-.navbar button{
-
-    background:none;
-
-    border:none;
-
-
-    color:white;
-
-
-    font-size:16px;
-
-    font-weight:500;
-
-
-    cursor:pointer;
-
-
-    transition:.25s;
-
+body {
+padding-top: 75px;
 }
 
-
-
-.navbar button:hover{
-
-    color:#8ea6ff;
-
-    transform:translateY(-2px);
-
+.navbar {
+position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 75px;
+  padding: 0 40px;
+  background: rgb(255 255 255 / 8%);
+  backdrop-filter: blur(20px);
 }
 
-
-
-/* Lewa część navbaru */
-
-
-.nav-left{
-
-    display:flex;
-
-    gap:30px;
-
+.nav-left,
+.nav-right {
+display: flex;
+  align-items: center;
 }
 
-
-
-/* Prawa część navbaru */
-
-
-.nav-right{
-
-    margin-left:auto;
-
+.nav-left {
+gap: 30px;
 }
 
-
-
-/* Aktywna zakładka */
-
-
-.navbar button.active{
-
-    color:#8ea6ff;
-
-
-    font-weight:600;
-
-
-    position:relative;
-
+.nav-right {
+margin-left: auto;
+}
+/* PROFILE */
+.profile-menu {
+position: relative;
 }
 
-
-
-/* Pasek pod aktywną zakładką */
-
-
-.navbar button.active::after{
-
-    content:"";
-
-
-    position:absolute;
-
-
-    left:50%;
-
-
-    bottom:-10px;
-
-
-    transform:translateX(-50%);
-
-
-
-    width:25px;
-
-
-    height:3px;
-
-
-    border-radius:10px;
-
-
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #7c5cff,
-            #5b8cff
-        );
-
+#profile-button {
+cursor: pointer;
 }
 
-.navbar button:disabled{
-
-    cursor:default;
-
-    opacity:1;
-
+.profile-dropdown {
+position: absolute;
+  z-index: 9999;
+  top: 55px;
+  right: 0;
+  visibility: hidden;
+  width: 180px;
+  padding: 12px;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 16px;
+  opacity: 0;
+  background: rgb(15 23 42 / 90%);
+  box-shadow: 0 20px 60px rgb(0 0 0 / 55%);
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    visibility 0.22s;
+  transform: translateY(-12px) scale(0.97);
+  pointer-events: none;
+  backdrop-filter: blur(25px);
 }
 
-/* PROFIL DROPDOWN */
-
-/* PROFIL DROPDOWN */
-
-.profile-menu{
-    position:relative;
+.profile-dropdown button {
+width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background: none;
+  cursor: pointer;
+  transition: 0.25s;
+  text-align: left;
 }
 
-#profile-button{
-    cursor:pointer;
+.profile-dropdown button:hover {
+color: #8ea6ff;
+  background: rgb(255 255 255 / 30%);
 }
 
-.profile-dropdown{
-
-    position:absolute;
-
-    top:55px;
-    right:0;
-
-    width:180px;
-    padding:12px;
-
-    background:rgba(15,23,42,.9);
-
-    backdrop-filter:blur(25px);
-    -webkit-backdrop-filter:blur(25px);
-
-    border:1px solid rgba(255,255,255,.18);
-
-    border-radius:16px;
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.55);
-
-    z-index:9999;
-
-    /* stan ukryty */
-
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-
-    transform:translateY(-12px) scale(.97);
-
-    transition:
-        opacity .22s ease,
-        transform .22s ease,
-        visibility .22s;
+.profile-menu.open .profile-dropdown {
+visibility: visible;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
 }
 
-/* stan widoczny */
-
-.profile-menu.open .profile-dropdown{
-
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto;
-
-    transform:translateY(0) scale(1);
-
+.nav-left button,
+.nav-right > button {
+border: none;
+  color: white;
+  background: none;
+  cursor: pointer;
+  transition: 0.25s;
+  font-size: 16px;
+  font-weight: 500;
 }
 
-.profile-dropdown button{
-
-
-    width:100%;
-
-
-    padding:12px;
-
-
-    border:none;
-
-
-    background:none;
-
-
-    color:white;
-
-
-    text-align:left;
-
-
-    cursor:pointer;
-
-
-    border-radius:10px;
-
-
-    transition:.25s;
-
+.nav-left button:hover,
+.nav-right > button:hover {
+color: #8ea6ff;
+  transform: translateY(-2px);
 }
 
-
-
-.profile-dropdown button:hover{
-
-
-    background:
-
-        rgba(255,255,255,.30);
-
-
-    color:#8ea6ff;
-
-
+.navbar button.active {
+position: relative;
+  color: #8ea6ff;
+  font-weight: 600;
 }
 
-
-
-/* aktywne menu */
-
-
-.profile-menu.open 
-.profile-dropdown{
-    opacity:0;
-    transform:translateY(-10px);
-
-    transition:.25s;
-    display:block;
-
+.navbar button.active::after {
+position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 25px;
+  height: 3px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #7c5cff, #5b8cff);
+  content: '';
+  transform: translateX(-50%);
 }
 
-
-
-.profile-menu.open .profile-dropdown{
-
-    display:block;
-
-    opacity:1;
-
-    transform:translateY(0);
-
+.navbar button:disabled {
+opacity: 1;
+  cursor: default;
 }
 
-@media(max-width:700px){
-
-
-    .navbar{
-
-
-        height:55px;
-
-
-        padding:0 15px;
-
-
-    }
-
-
-
-    .navbar button{
-
-
-        font-size:12px;
-
-
-    }
-
-
-
-    .nav-left{
-
-
-        gap:15px;
-
-
-    }
-
-
-
-    .nav-right{
-
-
-        margin-left:auto;
-
-
-    }
-
-
+@media (width <= 700px) {
+body {
+padding-top: 55px;
+}
+  .navbar {
+height: 55px;
+    padding: 0 15px;
+}
+  .nav-left,
+  .nav-right {
+align-items: center;
+}
+  .nav-left {
+gap: 15px;
+}
+  .nav-left button,
+  .nav-right > button {
+font-size: 12px;
+}
+  .nav-right {
+margin-left: auto;
+}
+  .profile-dropdown {
+top: 48px;
+    width: 160px;
+}
 }

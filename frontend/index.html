@@ -1,65 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Logowanie</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="login-box">
-
-        <h1>Logowanie</h1>
-        <div id="errorBox" class="error-box">
-
-            <p id="errorMessage"></p>
-            <button id="registerButton">
-                Utwórz konto
-            </button>
-            
-            <button id="errorButton">
-                OK
-            </button>
-
-            
-
-        </div>
-        <form>
-
-            <input
-                id="email"
-                type="email"
-                placeholder="Adres e-mail"
-                required
-            >
-
-            <input
-                id="password"
-                type="password"
-                placeholder="Hasło"
-                required
-            >
-
-            <button type="submit">
-                Zaloguj się
-            </button>
-
-        </form>
-
-
-        <p class="register">
-            Nie masz jeszcze konta?
-            <a href="register/register.html">
-                Załóż konto
-            </a>
-        </p>
-
+      <h1>Logowanie</h1>
+      <div id="errorBox" class="error-box">
+        <p id="errorMessage"></p>
+        <button id="registerButton">Utwórz konto</button>
+        <button id="errorButton">OK</button>
+      </div>
+      <form>
+        <input id="email" type="email" placeholder="Adres e-mail" required />
+        <input id="password" type="password" placeholder="Hasło" required />
+        <button type="submit">Zaloguj się</button>
+      </form>
+      <p class="register">
+        Nie masz jeszcze konta?
+        <a href="register/register.html"> Załóż konto </a>
+      </p>
     </div>
-
-
-    <script src="script.js"></script>
-
-</body>
+    <script type="module" src="script.js"></script>
+  </body>
 </html>
