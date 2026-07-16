@@ -1,328 +1,178 @@
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Inter", sans-serif;
+* {
+box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
 }
 
-body{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    background:
-        radial-gradient(circle at top left, #6d5dfc 0%, transparent 35%),
-        radial-gradient(circle at bottom right, #00c6ff 0%, transparent 35%),
-        #0f172a;
-    overflow:hidden;
+body {
+display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, #6d5dfc 0%, transparent 35%),
+    radial-gradient(circle at bottom right, #00c6ff 0%, transparent 35%),
+    #0f172a;
 }
 
-.login-box{
-    width:380px;
-    padding:45px;
-    border-radius:24px;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-    border:1px solid rgba(255,255,255,0.12);
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.45),
-        inset 0 1px 0 rgba(255,255,255,.08);
+.login-box {
+width: 380px;
+  padding: 45px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }
 
-h1{
-    color:white;
-    text-align:center;
-    font-size:32px;
-    font-weight:600;
-    margin-bottom:35px;
+h1 {
+margin-bottom: 35px;
+  color: white;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
 }
 
-form{
-    display:flex;
-    flex-direction:column;
-    gap:18px;
+form {
+display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-input{
-    width:100%;
-    padding:16px 18px;
-    border:none;
-    border-radius:14px;
-    background:rgba(255,255,255,.08);
-    color:white;
-    font-size:15px;
-    transition:.25s;
+input {
+width: 100%;
+  padding: 16px 18px;
+  border: none;
+  border-radius: 14px;
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
+  transition: 0.25s;
+  font-size: 15px;
 }
 
-input::placeholder{
-    color:rgba(255,255,255,.55);
+input::placeholder {
+color: rgba(255, 255, 255, 0.55);
 }
 
-input:focus{
-    outline:none;
-    background:rgba(255,255,255,.12);
-    box-shadow:0 0 0 2px #7c5cff;
+input:focus {
+outline: none;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 2px #7c5cff;
 }
 
-button{
-    margin-top:8px;
-    padding:16px;
-    border:none;
-    border-radius:14px;
-    background:linear-gradient(135deg,#7c5cff,#5b8cff);
-    color:white;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.25s;
+button {
+padding: 16px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 14px;
+  color: white;
+  background: linear-gradient(135deg, #7c5cff, #5b8cff);
+  cursor: pointer;
+  transition: 0.25s;
+  font-size: 16px;
+  font-weight: 600;
 }
 
-button:hover{
-    transform:translateY(-2px);
-    box-shadow:0 10px 25px rgba(92,115,255,.45);
+button:hover {
+box-shadow: 0 10px 25px rgba(92, 115, 255, 0.45);
+  transform: translateY(-2px);
 }
 
-button:active{
-    transform:scale(.98);
-}
-.register{
-    margin-top:24px;
-    text-align:center;
-    color:rgba(255,255,255,.75);
-    font-size:14px;
+button:active {
+transform: scale(0.98);
 }
 
-.register a{
-    color:#8ea6ff;
-    text-decoration:none;
-    font-weight:600;
-    transition:.2s;
+.register {
+margin-top: 24px;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  font-size: 14px;
 }
 
-.register a:hover{
-    color:white;
+.register a {
+color: #8ea6ff;
+  transition: 0.2s;
+  font-weight: 600;
+  text-decoration: none;
 }
+
+.register a:hover {
+color: white;
+}
+
 .error-box {
-
-    position: fixed;
-
-    top: 30px;
-    left: 50%;
-
-
-    transform:
-        translateX(-50%)
-        translateY(-40px)
-        scale(.95);
-
-
-    width: 360px;
-
-    padding: 28px;
-
-
-    background: #1e293b;
-
-
-    border: 1px solid rgba(255,255,255,.1);
-
-
-    border-radius: 20px;
-
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.55),
-        0 0 25px rgba(255,77,77,.25);
-
-
-
-    opacity:0;
-
-    pointer-events:none;
-
-
-    transition:
-
-        opacity .3s ease,
-
-        transform .3s ease;
-
-
-    z-index:9999;
-
+position: fixed;
+  z-index: 9999;
+  top: 30px;
+  left: 50%;
+  width: 360px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  opacity: 0;
+  background: #1e293b;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.55),
+    0 0 25px rgba(255, 77, 77, 0.25);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  transform: translateX(-50%) translateY(-40px) scale(0.95);
+  pointer-events: none;
 }
-
-
-
 
 .error-box.show {
-
-
-    opacity:1;
-
-
-    pointer-events:auto;
-
-
-    transform:
-
-        translateX(-50%)
-
-        translateY(0)
-
-        scale(1);
-
+opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+  pointer-events: auto;
 }
-
-
-
-
 
 .error-box p {
-
-
-    margin-bottom:22px;
-
-
-    color:white;
-
-
-    text-align:center;
-
-
-    font-size:16px;
-
-
-    line-height:1.6;
-
-
-    font-weight:500;
-
+line-height: 1.6;
+  margin-bottom: 22px;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
 }
-
-
-
-
 
 .error-box button {
-
-
-    width:100%;
-
-
-    padding:14px;
-
-
-    margin-top:10px;
-
-
-    border:none;
-
-
-    border-radius:14px;
-
-
-    color:white;
-
-
-    font-size:15px;
-
-
-    font-weight:600;
-
-
-    cursor:pointer;
-
-
-    transition:.25s;
-
+width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 14px;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+  font-size: 15px;
+  font-weight: 600;
 }
-
-
-
-
-
 
 .error-box button:first-of-type {
-
-
-    background:
-
-        linear-gradient(
-
-            135deg,
-
-            #7c5cff,
-
-            #5b8cff
-
-        );
-
-
+background: linear-gradient(135deg, #7c5cff, #5b8cff);
 }
-
-
-
-
 
 .error-box button:first-of-type:hover {
-
-
-    transform:translateY(-2px);
-
-
-    box-shadow:
-        0 10px 25px rgba(92,115,255,.45);
-
+box-shadow: 0 10px 25px rgba(92, 115, 255, 0.45);
+  transform: translateY(-2px);
 }
-
-
-
-
-
 /* Przycisk utworzenia konta */
-
 .error-box button:last-of-type {
-
-    margin-top: 50px;
-    background:
-
-        linear-gradient(
-
-            135deg,
-
-            #7c5cff,
-
-            #5b8cff
-
-        );
-
-
+margin-top: 50px;
+  background: linear-gradient(135deg, #7c5cff, #5b8cff);
 }
-
-
-
-
 
 .error-box button:last-of-type:hover {
-
-
-    transform:translateY(-2px);
-
-    
-    box-shadow:
-
-        0 10px 25px rgba(92,115,255,.45);
-
+box-shadow: 0 10px 25px rgba(92, 115, 255, 0.45);
+  transform: translateY(-2px);
 }
 
-
-
 .error-box button:active {
-
-
-    transform:scale(.97);
-
+transform: scale(0.97);
 }

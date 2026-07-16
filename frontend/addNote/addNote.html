@@ -1,62 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="addNote.css">
-</head>
-<body>
-    <div class="editor">
-
-        <nav class="editor-navbar">
-
-            <input
-                id="title"
-                class="title-input"
-                type="text"
-                placeholder="Tytuł notatki">
-
-            <div class="toolbar">
-
-                <button data-command="bold"><b>B</b></button>
-
-                <button data-command="italic"><i>I</i></button>
-
-                <button data-command="underline"><u>U</u></button>
-
-                <button data-command="formatBlock" data-value="h1">
-                    H1
-                </button>
-
-                <button data-command="formatBlock" data-value="h2">
-                    H2
-                </button>
-
-                <button data-command="insertUnorderedList">
-                    • Lista
-                </button>
-
-                <button data-command="insertOrderedList">
-                    1.
-                </button>
-
-            </div>
-
-            <button id="save-note">
-                Zapisz
-            </button>
-
-        </nav>
-
-        <div
-            id="content"
-            class="editor-content"
-            contenteditable="true">
-
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dodaj notatkę</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.snow.css"
+    />
+    <link rel="stylesheet" href="addNote.css" />
+    <link rel="stylesheet" href="../navbar/navbar.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-left">
+        <button data-page="home">Główna</button>
+        <button class="active" data-page="notes">Notatki</button>
+        <button data-page="calendar">Kalendarz</button>
+        <button data-page="day">Dziś</button>
+        <button data-page="expenses">Wydatki</button>
+      </div>
+      <div class="nav-right profile-menu">
+        <button id="profile-button">Profil</button>
+        <div class="profile-dropdown">
+          <button data-page="settings">Ustawienia</button>
+          <button id="logout">Wyloguj</button>
         </div>
-
+      </div>
+    </nav>
+    <script src="../navbar/navbar.js"></script>
+    <div class="editor">
+      <nav class="editor-navbar">
+        <input
+          id="title"
+          class="title-input"
+          type="text"
+          placeholder="Tytuł notatki"
+        />
+        <div class="toolbar">
+          <button type="button" id="bold-btn">
+            <b>B</b>
+          </button>
+          <button type="button" id="italic-btn">
+            <i>I</i>
+          </button>
+          <button type="button" id="underline-btn">
+            <u>U</u>
+          </button>
+          <button type="button" id="h1-btn">H1</button>
+          <button type="button" id="h2-btn">H2</button>
+          <button type="button" id="link-btn">🔗</button>
+          <button type="button" id="ul-btn">•</button>
+          <button type="button" id="ol-btn">1.</button>
+          <button type="button" id="checkbox-btn">☐</button>
+        </div>
+        <button id="save-note" type="button">Zapisz</button>
+      </nav>
+      <div id="content" class="editor-content"></div>
     </div>
-    <script src="addNote.js"></script>
-</body>
+    <!-- ============================= -->
+    <!-- LINK MODAL -->
+    <!-- ============================= -->
+    <div id="link-modal" class="link-modal">
+      <div class="link-box">
+        <h3>Dodaj link</h3>
+        <label> Nazwa </label>
+        <input id="link-name" type="text" placeholder="np. Dokumentacja" />
+        <label> Link </label>
+        <input id="link-url" type="text" placeholder="https://..." />
+        <div class="link-actions">
+          <button id="cancel-link" type="button">Anuluj</button>
+          <button id="add-link" type="button">Dodaj</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.js"></script>
+    <script type="module" src="addNote.js"></script>
+  </body>
 </html>

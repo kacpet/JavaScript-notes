@@ -1,57 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rejestracja</title>
-    <link rel="stylesheet" href="register.css">
-    <script src="register.js" defer></script>
-</head>
-
-<body>
-
+    <link rel="stylesheet" href="register.css" />
+    <script type="module" src="register.js" defer></script>
+  </head>
+  <body>
     <div class="register-box">
-
-        <h1>Rejestracja</h1>
-            <div id="errorBox" class="error-box">
-                <p id="errorMessage"></p>
-                <button id="errorButton">OK</button>
-            </div>
-        <form>
-
-            <input
-                id="email"
-                type="email"
-                placeholder="Adres e-mail"
-                required
-            >
-
-            <input
-                id="password"
-                type="password"
-                placeholder="Hasło"
-                required
-            >
-            
-            <input
-                id="confirmPassword"
-                type="password"
-                placeholder="Powtórz hasło"
-                required
-            >
-
-            <button id="registerButton" type="submit">
-                Załóż konto
-            </button>
-
-        </form>
-
-        <p class="register">
-            Masz już konto?
-            <a href="../index.html">Zaloguj się</a>
-        </p>
-
+      <h1>Rejestracja</h1>
+      <div id="errorBox" class="error-box">
+        <p id="errorMessage"></p>
+        <button id="errorButton">OK</button>
+      </div>
+      <form>
+        <input id="email" type="email" placeholder="Adres e-mail" required />
+        <input id="password" type="password" placeholder="Hasło" required />
+        <input
+          id="confirmPassword"
+          type="password"
+          placeholder="Powtórz hasło"
+          required
+        />
+        <button id="registerButton" type="submit">Załóż konto</button>
+      </form>
+      <p class="register">
+        Masz już konto?
+        <a href="../index.html">Zaloguj się</a>
+      </p>
     </div>
-
-</body>
+  </body>
 </html>

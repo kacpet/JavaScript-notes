@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Wydatki</title>
+
+    <link rel="stylesheet" href="expenses.css" />
+
+    <link rel="stylesheet" href="../navbar/navbar.css" />
+  </head>
+
+  <body>
+    <div class="dashboard">
+      <nav class="navbar">
+        <div class="nav-left">
+          <button data-page="home">Główna</button>
+
+          <button data-page="notes">Notatki</button>
+
+          <button data-page="calendar">Kalendarz</button>
+
+          <button data-page="day">Dziś</button>
+
+          <button class="active" data-page="expenses">Wydatki</button>
+        </div>
+
+        <div class="nav-right profile-menu">
+          <button id="profile-button">Profil</button>
+
+          <div class="profile-dropdown">
+            <button data-page="settings">Ustawienia</button>
+
+            <button id="logout">Wyloguj</button>
+          </div>
+        </div>
+      </nav>
+
+      <main class="expenses-page">
+        <header class="expenses-header">
+          <h1>Zarządzanie finansami</h1>
+
+          <p>Kontroluj swoje pieniądze, limity i cele</p>
+        </header>
+
+        <!-- ==========================
+        SUMMARY
+========================== -->
+
+        <section class="finance-summary">
+          <div class="summary-card">
+            <h3>Balans</h3>
+
+            <strong id="balance"> 0 zł </strong>
+          </div>
+
+          <div class="summary-card income">
+            <h3>Przychody</h3>
+
+            <strong id="income"> 0 zł </strong>
+          </div>
+
+          <div class="summary-card expense">
+            <h3>Wydatki</h3>
+
+            <strong id="expense"> 0 zł </strong>
+          </div>
+
+          <div class="summary-card save">
+            <h3>Oszczędności</h3>
+
+            <strong id="saving"> 0 zł </strong>
+          </div>
+        </section>
+
+        <!-- ==========================
+        ACTIONS
+========================== -->
+
+        <section class="actions-panel">
+          <div class="glass-box">
+            <h2>Dodaj transakcję</h2>
+
+            <div class="form-row">
+              <input id="finance-title" type="text" placeholder="Nazwa" />
+
+              <input id="finance-amount" type="number" placeholder="Kwota" />
+
+              <select id="finance-type">
+                <option value="income">Przychód</option>
+
+                <option value="expense">Wydatek</option>
+              </select>
+
+              <button id="add-finance">Dodaj</button>
+            </div>
+          </div>
+
+          <div class="glass-box">
+            <h2>Limity</h2>
+
+            <div class="limit">
+              <div>
+                <span> Wydatki miesięczne </span>
+
+                <strong id="limit-value"> 0 / 0 zł </strong>
+              </div>
+
+              <div class="progress">
+                <div class="progress-fill" id="limit-progress"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================
+        GOALS
+========================== -->
+
+        <section class="goals-section">
+          <h2>Cele finansowe</h2>
+
+          <div class="goal-container" id="goal-container">
+            <button class="add-goal">+ Dodaj cel</button>
+          </div>
+        </section>
+
+        <!-- ==========================
+        TRANSACTIONS
+========================== -->
+
+        <section class="transactions">
+          <h2>Ostatnie transakcje</h2>
+
+          <div id="transaction-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="../navbar/navbar.js"></script>
+
+    <script src="expenses.js"></script>
+  </body>
+</html>

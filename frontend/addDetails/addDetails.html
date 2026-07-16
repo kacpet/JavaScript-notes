@@ -1,73 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Uzupełnij dane</title>
-    <link rel="stylesheet" href="addDetails.css">
-</head>
-
-<body>
-
+    <link rel="stylesheet" href="addDetails.css" />
+  </head>
+  <body>
     <div class="details-box">
-
-        <h1>Uzupełnij dane</h1>
-
-        <form id="detailsForm">
-
-            <label for="name">
-                Jak mam się do Ciebie zwracać?
-            </label>
-
-            <input
-                id="name"
-                type="text"
-                placeholder="Imię"
-                required
-            >
-
-
-            <label>
-                Twoja płeć
-            </label>
-
-            <div class="gender-buttons">
-
-                <button
-                    type="button"
-                    class="gender-btn"
-                    data-gender="male"
-                >
-                    Mężczyzna
-                </button>
-
-                <button
-                    type="button"
-                    class="gender-btn"
-                    data-gender="female"
-                >
-                    Kobieta
-                </button>
-
-            </div>
-
-
-            <input
-                type="hidden"
-                id="gender"
-                required
-            >
-
-
-            <button type="submit">
-                Zapisz
-            </button>
-
-        </form>
-
+      <h1>Uzupełnij dane</h1>
+      <form id="detailsForm">
+        <label for="name"> Jak mam się do Ciebie zwracać? </label>
+        <input id="name" type="text" placeholder="Imię" required />
+        <label> Twoja płeć </label>
+        <div class="gender-buttons">
+          <button type="button" class="gender-btn" data-gender="male">
+            Mężczyzna
+          </button>
+          <button type="button" class="gender-btn" data-gender="female">
+            Kobieta
+          </button>
+        </div>
+        <input type="hidden" id="gender" required />
+        <button type="submit">Zapisz</button>
+      </form>
     </div>
-
-    <script src="addDetails.js"></script>
-
-</body>
+    <script type="module" src="addDetails.js"></script>
+  </body>
 </html>

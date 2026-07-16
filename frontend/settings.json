@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+
+  "[css]": {
+    "editor.defaultFormatter": "aeschli.vscode-css-formatter"
+  }
+}

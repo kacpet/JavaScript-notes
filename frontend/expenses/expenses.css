@@ -1,0 +1,331 @@
+* {
+box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+body {
+min-height: 100vh;
+  color: white;
+  background:
+    radial-gradient(circle at 15% 10%, rgb(124 92 255 / 80%), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgb(0 198 255 / 75%), transparent 45%),
+    radial-gradient(circle at 50% 50%, rgb(91 140 255 / 35%), transparent 60%),
+    #080f24;
+}
+
+.dashboard {
+width: 100%;
+}
+/* ==========================
+        MAIN PAGE
+========================== */
+.expenses-page {
+min-height: 100vh;
+  padding: 130px 40px 60px;
+  animation: show 0.5s ease;
+}
+
+.expenses-header {
+margin-bottom: 50px;
+  text-align: center;
+}
+
+.expenses-header h1 {
+color: white;
+  font-size: 42px;
+  font-weight: 600;
+}
+
+.expenses-header p {
+margin-top: 15px;
+  color: rgb(255 255 255 / 65%);
+  font-size: 17px;
+}
+/* ==========================
+        SUMMARY CARDS
+========================== */
+.finance-summary {
+display: grid;
+  margin-bottom: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.summary-card {
+min-height: 150px;
+  padding: 30px;
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 24px;
+  background: rgb(255 255 255 / 8%);
+  box-shadow:
+    0 20px 50px rgb(0 0 0 / 35%),
+    inset 0 1px 0 rgb(255 255 255 / 8%);
+  transition: 0.3s;
+  backdrop-filter: blur(20px);
+}
+
+.summary-card:hover {
+box-shadow: 0 25px 60px rgb(0 0 0 / 50%);
+  transform: translateY(-8px);
+}
+
+.summary-card h3 {
+margin-bottom: 20px;
+  color: rgb(255 255 255 / 65%);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.summary-card strong {
+font-size: 32px;
+  font-weight: 700;
+}
+/* colors */
+.summary-card.income strong {
+color: #45ff9a;
+}
+
+.summary-card.expense strong {
+color: #ff6678;
+}
+
+.summary-card.save strong {
+color: #5b8cff;
+}
+/* ==========================
+        ACTIONS
+========================== */
+.actions-panel {
+display: grid;
+  margin-bottom: 40px;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 25px;
+}
+
+.glass-box {
+padding: 30px;
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 24px;
+  background: rgb(255 255 255 / 8%);
+  box-shadow: 0 20px 50px rgb(0 0 0 / 35%);
+  backdrop-filter: blur(20px);
+}
+
+.glass-box h2,
+.goals-section h2,
+.transactions h2 {
+margin-bottom: 25px;
+  font-size: 25px;
+}
+
+.form-row {
+display: flex;
+  gap: 15px;
+}
+
+.form-row input,
+.form-row select {
+width: 100%;
+  padding: 14px 18px;
+  border: 1px solid rgb(255 255 255 / 15%);
+  border-radius: 16px;
+  outline: none;
+  color: white;
+  background: rgb(255 255 255 / 10%);
+}
+
+.form-row input::placeholder {
+color: rgb(255 255 255 / 55%);
+}
+
+.form-row select option {
+color: black;
+}
+
+.form-row button,
+.add-goal {
+padding: 14px 28px;
+  border: none;
+  border-radius: 18px;
+  color: white;
+  background: linear-gradient(135deg, #7c5cff, #5b8cff);
+  cursor: pointer;
+  transition: 0.25s;
+  font-weight: 600;
+}
+
+.form-row button:hover,
+.add-goal:hover {
+box-shadow: 0 10px 30px rgb(92 115 255 / 45%);
+  transform: translateY(-3px);
+}
+
+.form-row button:active,
+.add-goal:active {
+transform: scale(0.97);
+}
+/* ==========================
+        PROGRESS
+========================== */
+.limit {
+margin-top: 10px;
+}
+
+.limit span {
+color: rgb(255 255 255 / 65%);
+}
+
+.limit strong {
+display: block;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.progress {
+overflow: hidden;
+  height: 12px;
+  margin-top: 18px;
+  border-radius: 20px;
+  background: rgb(255 255 255 / 15%);
+}
+
+.progress-fill {
+width: 60%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #7c5cff, #5b8cff);
+}
+/* ==========================
+        GOALS
+========================== */
+.goals-section {
+margin-bottom: 40px;
+}
+
+.goal-container {
+display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.goal-card {
+padding: 25px;
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 24px;
+  background: rgb(255 255 255 / 8%);
+  box-shadow: 0 20px 50px rgb(0 0 0 / 35%);
+  transition: 0.3s;
+  backdrop-filter: blur(20px);
+}
+
+.goal-card:hover {
+transform: translateY(-6px);
+}
+
+.goal-card h3 {
+margin-bottom: 12px;
+  font-size: 22px;
+}
+
+.goal-card p,
+.goal-card span {
+color: rgb(255 255 255 / 65%);
+}
+
+.goal-progress {
+width: 58%;
+  height: 100%;
+  background: linear-gradient(90deg, #45ff9a, #00c6ff);
+}
+
+.goal-progress.vacation {
+width: 30%;
+}
+/* ==========================
+        TRANSACTIONS
+========================== */
+.transactions {
+padding: 30px;
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 24px;
+  background: rgb(255 255 255 / 8%);
+  backdrop-filter: blur(20px);
+}
+
+.transaction {
+display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
+}
+
+.transaction:last-child {
+border-bottom: none;
+}
+
+.transaction span {
+color: rgb(255 255 255 / 75%);
+}
+
+.plus {
+color: #45ff9a;
+}
+
+.minus {
+color: #ff6678;
+}
+/* ==========================
+        ANIMATION
+========================== */
+@keyframes show {
+from {
+opacity: 0;
+    transform: translateY(20px);
+}
+  to {
+opacity: 1;
+    transform: translateY(0);
+}
+}
+/* ==========================
+        RESPONSIVE
+========================== */
+@media (width <= 1100px) {
+.finance-summary {
+grid-template-columns: repeat(2, 1fr);
+}
+  .actions-panel {
+grid-template-columns: 1fr;
+}
+  .goal-container {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media (width <= 700px) {
+.expenses-page {
+padding: 110px 20px 40px;
+}
+  .expenses-header h1 {
+font-size: 30px;
+}
+  .finance-summary {
+grid-template-columns: 1fr;
+}
+  .goal-container {
+grid-template-columns: 1fr;
+}
+  .form-row {
+flex-direction: column;
+}
+  .summary-card strong {
+font-size: 26px;
+}
+  .glass-box,
+  .transactions {
+padding: 25px;
+}
+}

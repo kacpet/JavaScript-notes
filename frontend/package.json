@@ -4,10 +4,32 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier . --write",
+    "lint": "eslint .",
+    "fix": "eslint . --fix",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:css:fix": "stylelint \"**/*.css\" --fix",
+    "css:format": "stylefmt \"**/*.css\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "csscomb": "^4.3.0",
+    "eslint": "^10.7.0",
+    "globals": "^17.7.0",
+    "postcss": "^8.5.19",
+    "postcss-cli": "^11.0.1",
+    "prettier": "^3.9.5",
+    "prettier-plugin-css-order": "^2.2.0",
+    "stylefmt": "^6.0.3",
+    "stylelint": "^17.14.0",
+    "stylelint-config-standard": "^40.0.0"
+  },
+  "dependencies": {
+    "firebase": "^12.16.0"
+  }
 }
