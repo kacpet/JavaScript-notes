@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notatki</title>
+    <script type="module" crossorigin src="/JavaScript-notes/assets/notes-CgaGAu6Z.js"></script>
+    <link rel="modulepreload" crossorigin href="/JavaScript-notes/assets/firebase-CZxFrQus.js">
+    <link rel="stylesheet" crossorigin href="/JavaScript-notes/assets/notes-C2I49yY3.css">
+    <link rel="stylesheet" crossorigin href="/JavaScript-notes/assets/navbar-BHu7W5da.css">
+  </head>
+  <body>
+    <div id="preview-modal" class="preview-modal">
+      <div class="preview-content">
+        <button id="close-preview" class="close-preview">✕</button>
+        <h2 id="preview-title"></h2>
+        <div id="preview-text" class="preview-text"></div>
+        <span id="preview-date"> </span>
+      </div>
+    </div>
+    <div class="dashboard">
+      <nav class="navbar">
+        <div class="nav-left">
+          <button data-page="home">Główna</button>
+          <button class="active" data-page="notes">Notatki</button>
+          <button data-page="calendar">Kalendarz</button>
+          <button data-page="day">Dziś</button>
+          <!-- <button data-page="expenses">Wydatki</button> -->
+        </div>
+        <div class="nav-right profile-menu">
+          <button id="profile-button">Profil</button>
+          <div class="profile-dropdown">
+            <button data-page="settings">Ustawienia</button>
+            <button id="logout">Wyloguj</button>
+          </div>
+        </div>
+      </nav>
+      <script src="../navbar/navbar.js"></script>
+      <main>
+        <section class="notes-header">
+          <h1>Twoje notatki</h1>
+          <button id="addNote" class="main-button">+ Dodaj notatkę</button>
+        </section>
+        <section id="notes-container" class="notes-container">
+          <p id="no-notes">Brak dostępnych notatek</p>
+        </section>
+      </main>
+    </div>
+    <div id="delete-modal" class="modal">
+      <div class="modal-content">
+        <h2>Usuń notatkę</h2>
+        <p id="delete-text"></p>
+        <div class="modal-buttons">
+          <button id="cancel-delete">Anuluj</button>
+          <button id="confirm-delete">Usuń</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

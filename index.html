@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logowanie</title>
+    <script type="module" crossorigin src="/JavaScript-notes/assets/main-DZR9JBzV.js"></script>
+    <link rel="modulepreload" crossorigin href="/JavaScript-notes/assets/firebase-CZxFrQus.js">
+    <link rel="stylesheet" crossorigin href="/JavaScript-notes/assets/main-CIFUIlEC.css">
+  </head>
+  <body>
+    <div class="login-box">
+      <h1>Logowanie</h1>
+      <div id="errorBox" class="error-box">
+        <p id="errorMessage"></p>
+        <button id="registerButton">Utwórz konto</button>
+        <button id="errorButton">OK</button>
+      </div>
+      <form>
+        <input id="email" type="email" placeholder="Adres e-mail" required />
+        <input id="password" type="password" placeholder="Hasło" required />
+        <button type="submit">Zaloguj się</button>
+      </form>
+      <p class="register">
+        Nie masz jeszcze konta?
+        <a href="register/register.html"> Załóż konto </a>
+      </p>
+    </div>
+  </body>
+</html>

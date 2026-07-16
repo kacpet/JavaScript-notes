@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dziś</title>
+
+
+    <script type="module" crossorigin src="/JavaScript-notes/assets/day-Dh4xa_dR.js"></script>
+    <link rel="modulepreload" crossorigin href="/JavaScript-notes/assets/firebase-CZxFrQus.js">
+    <link rel="stylesheet" crossorigin href="/JavaScript-notes/assets/day-CXt8X78b.css">
+    <link rel="stylesheet" crossorigin href="/JavaScript-notes/assets/navbar-BHu7W5da.css">
+  </head>
+
+  <body>
+    <div class="dashboard">
+      <nav class="navbar">
+        <div class="nav-left">
+          <button data-page="home">Główna</button>
+
+          <button data-page="notes">Notatki</button>
+
+          <button data-page="calendar">Kalendarz</button>
+
+          <button class="active" data-page="day">Dziś</button>
+
+          <!-- <button data-page="expenses">Wydatki</button> -->
+        </div>
+
+        <div class="nav-right profile-menu">
+          <button id="profile-button">Profil</button>
+
+          <div class="profile-dropdown">
+            <button data-page="settings">Ustawienia</button>
+
+            <button id="logout">Wyloguj</button>
+          </div>
+        </div>
+      </nav>
+
+      <main class="day-page">
+        <header class="day-header">
+          <h1 id="day-title"></h1>
+        </header>
+
+        <section class="timeline" id="dayContainer">
+          <div class="hours-layer"></div>
+
+          <div class="events-layer"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="../navbar/navbar.js"></script>
+
+  </body>
+</html>
